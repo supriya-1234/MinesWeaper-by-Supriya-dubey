@@ -1,2 +1,2 @@
-# MinesWeaper-by-Supriya-dubey
+# M
 Created with CodeSandbox
