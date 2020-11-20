@@ -108,12 +108,12 @@ function click(square) {
     gameOver(square);
   } else {
     let total = square.getAttribute("data");
-    if (total != 0) {
+    if (total !== 0) {
       square.classList.add("checked");
-      if (total == 1) square.classList.add("one");
-      if (total == 2) square.classList.add("two");
-      if (total == 3) square.classList.add("three");
-      if (total == 4) square.classList.add("four");
+      if (total === 1) square.classList.add("one");
+      if (total === 2) square.classList.add("two");
+      if (total === 3) square.classList.add("three");
+      if (total === 4) square.classList.add("four");
       square.innerHTML = total;
       return;
     }
@@ -129,49 +129,49 @@ function checkSquare(square, currentId) {
 
   setTimeout(() => {
     if (currentId > 0 && !isLeftEdge) {
-      const newId = squares[parseInt(currentId) - 1].id;
+      const newId = squares[currentId - 1].id;
       //const newId = parseInt(currentId) - 1   ....refactor
       const newSquare = document.getElementById(newId);
       click(newSquare);
     }
     if (currentId > 9 && !isRightEdge) {
-      const newId = squares[parseInt(currentId) + 1 - width].id;
+      const newId = squares[currentId + 1 - width].id;
       //const newId = parseInt(currentId) +1 -width   ....refactor
       const newSquare = document.getElementById(newId);
       click(newSquare);
     }
     if (currentId > 10) {
-      const newId = squares[parseInt(currentId - width)].id;
+      const newId = squares[currentId - width].id;
       //const newId = parseInt(currentId) -width   ....refactor
       const newSquare = document.getElementById(newId);
       click(newSquare);
     }
     if (currentId > 11 && !isLeftEdge) {
-      const newId = squares[parseInt(currentId) - 1 - width].id;
+      const newId = squares[currentId - 1 - width].id;
       //const newId = parseInt(currentId) -1 -width   ....refactor
       const newSquare = document.getElementById(newId);
       click(newSquare);
     }
     if (currentId < 98 && !isRightEdge) {
-      const newId = squares[parseInt(currentId) + 1].id;
+      const newId = squares[currentId + 1].id;
       //const newId = parseInt(currentId) +1   ....refactor
       const newSquare = document.getElementById(newId);
       click(newSquare);
     }
     if (currentId < 90 && !isLeftEdge) {
-      const newId = squares[parseInt(currentId) - 1 + width].id;
+      const newId = squares[currentId - 1 + width].id;
       //const newId = parseInt(currentId) -1 +width   ....refactor
       const newSquare = document.getElementById(newId);
       click(newSquare);
     }
     if (currentId < 88 && !isRightEdge) {
-      const newId = squares[parseInt(currentId) + 1 + width].id;
+      const newId = squares[currentId + 1 + width].id;
       //const newId = parseInt(currentId) +1 +width   ....refactor
       const newSquare = document.getElementById(newId);
       click(newSquare);
     }
     if (currentId < 89) {
-      const newId = squares[parseInt(currentId) + width].id;
+      const newId = squares[currentId + width].id;
       //const newId = parseInt(currentId) +width   ....refactor
       const newSquare = document.getElementById(newId);
       click(newSquare);
